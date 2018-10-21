@@ -18,7 +18,10 @@ import logging
 
 import tensorflow as tf
 from google.protobuf import text_format
-from object_detection.protos import string_int_label_map_pb2
+try:
+  from object_detection.protos import string_int_label_map_pb2
+except:
+  from cognitive_planning import string_int_label_map_pb2
 
 
 def _validate_label_map(label_map):
